@@ -1,0 +1,37 @@
+
+
+
+<!-- <ul>
+    <li><a href="{% url 'create' %}">create</a></li>
+    <li><a href="{% url 'update' %}">edit</a></li>
+    <li><a href="{% url 'list' %}">list</a></li>
+</ul> -->
+<!-- {% include 'menu.html' %} -->
+
+
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+{% block content %}
+<h1>1. Create User</h1>
+<div class="form-container">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ frm.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock content %}
+</body>
+</html>

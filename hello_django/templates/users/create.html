@@ -1,0 +1,68 @@
+{% extends 'blank.html' %}
+
+<!-- <ul>
+    <li><a href="{% url 'create' %}">create</a></li>
+    <li><a href="{% url 'update' %}">edit</a></li>
+    <li><a href="{% url 'list' %}">list</a></li>
+</ul> -->
+<!-- {% include 'menu.html' %} -->
+
+{% block content %}
+<h1>1.create user</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <!-- title <input type="text" name="title" id="">
+   year <input type="text" name="year" id="">
+   summary <input type="text" name="summary" id="">
+    -->
+   <!-- {{frm.as_p}} -->
+    username <input type="text" name="username" id=""><br>
+    password <input type="password" name="password" id="password"><br>
+   <!-- <button type="submit">submit</button> -->
+    <button>singup</button>
+</form>
+{% endblock content %}
+<h1>create</h1>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+{% block content %}
+<h1>1.create user</h1>
+
+<div class="form-container">
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <!-- title <input type="text" name="title" id="">
+   year <input type="text" name="year" id="">
+   summary <input type="text" name="summary" id="">
+    -->
+   {{frm.as_p}}
+    <!-- username <input type="text" name="username" id=""><br>
+    password <input type="password" name="password" id="password"><br> -->
+   <button type="submit">submit</button>
+    <!-- <button>singup</button> -->
+</form>
+</div>
+{% endblock content %}
+<h1>create</h1>
+</body>
+</html>
+
+
